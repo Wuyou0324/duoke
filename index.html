@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>多客AI - 全球电商自进化AI客服系统 | DUOKE</title>
+<meta name="description" content="多客（Duoke）是专为全球电商卖家打造的自进化AI客服系统，支持Shopee、Lazada、TikTok Shop、Mercado Libre、Daraz、Facebook、WhatsApp Business等平台，7×24小时智能客服，AI自动解决率75%+">
+<meta property="og:title" content="多客AI - 全球电商自进化AI客服系统">
+<meta property="og:description" content="多Agent·多Skill·多平台·多语言·多顾客 | AI自动解决率75%+ | 秒级响应 | 130+语言支持">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.duoke.com/favicon.ico">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; background: #08080f; color: #fff; -webkit-font-smoothing: antialiased; }
+.brand-gradient-text { background: linear-gradient(120deg, #4d7cff 0%, #8b5cf6 30%, #ec4899 60%, #fb7a45 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Section */
+.section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+.section-title { font-size: 32px; font-weight: 800; margin-bottom: 16px; line-height: 1.3; }
+.section-subtitle { font-size: 16px; color: rgba(255,255,255,0.5); margin-bottom: 40px; }
+.section-text { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 20px; }
+
+/* Hero */
+.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 20px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(77,124,255,0.15) 0%, transparent 70%); top: -200px; right: -200px; }
+.hero::after { content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 70%); bottom: -150px; left: -150px; }
+.hero-logo { font-size: 14px; letter-spacing: 4px; font-weight: 600; margin-bottom: 30px; position: relative; z-index: 1; }
+.hero-title { font-size: 48px; font-weight: 800; margin-bottom: 20px; position: relative; z-index: 1; line-height: 1.2; }
+.hero-desc { font-size: 20px; color: rgba(255,255,255,0.6); margin-bottom: 40px; position: relative; z-index: 1; }
+.hero-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; position: relative; z-index: 1; }
+.tag { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); padding: 8px 18px; border-radius: 20px; font-size: 13px; font-weight: 500; }
+
+/* Grid */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 30px 0; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 30px 0; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 30px 0; }
+
+/* Cards */
+.glass-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 24px; }
+.card-icon { font-size: 36px; margin-bottom: 12px; }
+.card-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.card-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+/* Stats */
+.stat-box { text-align: center; padding: 24px 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; }
+.stat-num { font-size: 36px; font-weight: 800; margin-bottom: 6px; }
+.stat-label { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+/* Highlight */
+.highlight-box { background: linear-gradient(135deg, rgba(77,124,255,0.08) 0%, rgba(139,92,246,0.08) 50%, rgba(236,72,153,0.08) 100%); border: 1px solid rgba(124,108,255,0.15); border-radius: 14px; padding: 20px 24px; margin: 24px 0; }
+.highlight-text { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.8; }
+
+/* Table */
+.comp-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 24px 0; font-size: 13px; border-radius: 14px; overflow: hidden; }
+.comp-table th { background: linear-gradient(120deg, #4d7cff 0%, #8b5cf6 100%); color: white; padding: 14px 12px; text-align: left; font-weight: 600; }
+.comp-table td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.65); }
+.comp-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+/* Testimonial */
+.testimonial { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 24px; margin: 16px 0; }
+.testi-text { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.8; font-style: italic; margin-bottom: 10px; }
+.testi-author { font-size: 12px; font-weight: 600; }
+.testi-tag { display: inline-block; margin-top: 8px; padding: 3px 10px; border-radius: 10px; font-size: 11px; font-weight: 500; }
+
+/* Case */
+.case-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 28px; margin: 20px 0; }
+.case-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.case-value { background: linear-gradient(120deg, rgba(77,124,255,0.12) 0%, rgba(139,92,246,0.12) 100%); border: 1px solid rgba(124,108,255,0.15); padding: 14px 18px; border-radius: 10px; margin: 16px 0; font-size: 14px; font-weight: 600; }
+.case-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.8; }
+
+/* Timeline */
+.timeline { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+.tl-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 16px; border-radius: 10px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); }
+.tl-item.current { background: linear-gradient(120deg, rgba(77,124,255,0.08) 0%, rgba(139,92,246,0.08) 100%); border-color: rgba(124,108,255,0.15); }
+.tl-dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.tl-title { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+.tl-desc { font-size: 12px; color: rgba(255,255,255,0.45); }
+
+/* QR */
+.qr-section { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 30px 0; text-align: center; }
+.qr-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px 20px; }
+.qr-image { width: 140px; height: 140px; margin: 0 auto 14px; border-radius: 10px; background: white; padding: 8px; }
+.qr-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.qr-desc { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+/* Divider */
+.divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(124,108,255,0.2), transparent); margin: 0 auto; max-width: 600px; }
+
+/* Footer */
+.footer { text-align: center; padding: 60px 20px; color: rgba(255,255,255,0.3); font-size: 13px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title { font-size: 32px; }
+    .hero-desc { font-size: 16px; }
+    .section { padding: 50px 16px; }
+    .section-title { font-size: 24px; }
+    .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-2, .qr-section { grid-template-columns: 1fr; }
+    .stat-num { font-size: 28px; }
+    .comp-table { font-size: 12px; }
+    .comp-table th, .comp-table td { padding: 10px 8px; }
+    .lang-switcher { top: 10px; right: 10px; padding: 4px 8px; }
+    .lang-link { font-size: 12px; padding: 3px 6px; }
+}
+@media (max-width: 480px) {
+    .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .hero-title { font-size: 28px; }
+}
+
+/* Language Switcher */
+.lang-switcher { position: fixed; top: 20px; right: 20px; display: flex; gap: 8px; z-index: 1000; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 6px 12px; backdrop-filter: blur(10px); }
+.lang-link { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; font-weight: 500; padding: 4px 8px; border-radius: 12px; transition: all 0.2s; }
+.lang-link:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.08); }
+.lang-link.active { background: linear-gradient(120deg, #4d7cff 0%, #8b5cf6 100%); color: #fff; }
+
+
+/* Scroll Reveal Animation */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Card Hover */
+.glass-card { transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+.glass-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(77,124,255,0.15); border-color: rgba(124,108,255,0.25); }
+
+/* Stat Box Hover */
+.stat-box { transition: transform 0.3s ease, border-color 0.3s ease; }
+.stat-box:hover { transform: scale(1.05); border-color: rgba(124,108,255,0.2); }
+
+/* Platform Badge */
+.platform-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 16px 20px; transition: all 0.3s ease; cursor: default; }
+.platform-badge:hover { background: rgba(255,255,255,0.08); border-color: rgba(124,108,255,0.2); transform: translateY(-3px); }
+.platform-icon { font-size: 28px; }
+.platform-name { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.85); }
+.platform-desc { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+/* Floating CTA */
+.float-cta { position: fixed; bottom: 24px; right: 24px; z-index: 999; display: none; }
+@media (max-width: 768px) { .float-cta { display: block; } }
+
+/* FAQ */
+.faq-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; margin-bottom: 12px; overflow: hidden; transition: all 0.3s; }
+.faq-item:hover { border-color: rgba(124,108,255,0.15); }
+.faq-q { padding: 18px 24px; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: color 0.2s; }
+.faq-q:hover { color: #8b5cf6; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-a-inner { padding: 0 24px 18px; font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.8; }
+.faq-item.open .faq-a { max-height: 200px; }
+.faq-item.open .faq-q { color: #8b5cf6; }
+.faq-arrow { transition: transform 0.3s; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+/* Advantage Card */
+.advantage-card { background: linear-gradient(135deg, rgba(77,124,255,0.06) 0%, rgba(139,92,246,0.06) 100%); border: 1px solid rgba(124,108,255,0.1); border-radius: 16px; padding: 28px; text-align: center; transition: all 0.3s; }
+.advantage-card:hover { transform: translateY(-4px); border-color: rgba(124,108,255,0.2); box-shadow: 0 8px 30px rgba(77,124,255,0.1); }
+.advantage-icon { font-size: 40px; margin-bottom: 12px; }
+.advantage-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.advantage-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+/* Smooth Scroll */
+html { scroll-behavior: smooth; }
+
+/* Hero CTA hover */
+.hero-cta { display: inline-block; background: linear-gradient(120deg, #4d7cff 0%, #8b5cf6 50%, #ec4899 100%); color: #fff !important; text-decoration: none; font-size: 16px; font-weight: 700; padding: 14px 36px; border-radius: 30px; box-shadow: 0 8px 24px rgba(77,124,255,0.35); transition: transform 0.2s, box-shadow 0.2s; }
+.hero-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(77,124,255,0.45); }
+
+</style>
+</head>
+<body>
+
+<!-- Language Switcher -->
+<div class="lang-switcher">
+    <a href="/cn.html" class="lang-link active">中文</a>
+</div>
+
+
+<!-- Hero -->
+<div class="hero">
+    <div class="hero-logo brand-gradient-text">WWW.DUOKE.COM</div>
+    <div class="hero-title"><span class="brand-gradient-text">多客</span></div>
+    <div class="hero-desc">全球电商「自进化AI客服」系统</div>
+    <div class="hero-tags">
+        <span class="tag">多Agent</span>
+        <span class="tag">多Skill</span>
+        <span class="tag">多平台</span>
+        <span class="tag">多语言</span>
+        <span class="tag">多顾客</span>
+    </div>
+    <div style="margin-top: 32px; position: relative; z-index: 1;">
+        <a href="https://ai.duoke.com/#/dk/regist?code=XHQDK" target="_blank" class="hero-cta">免费试用</a>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 多客是什么 -->
+<div class="section">
+    <div class="section-title">多客，是什么？</div>
+    <div class="section-text">多客（Duoke）是一款专为全球电商卖家打造的自进化 AI 客服系统，基于自研 Multi-Agent 架构与 Skill 技能引擎，多客AI能够自主学习业务知识，自动处理客户咨询、订单跟进及售后服务，为企业提供 7×24 小时持续在线的智能客服能力。支持 Shopee、Lazada、TikTok Shop、Mercado Libre、Daraz、Facebook、WhatsApp Business 等平台消息统一管理，并提供智能跟单、多语言翻译、数据分析等能力，帮助卖家提升客服效率与客户体验。</div>
+    <div class="grid-4">
+        <div class="stat-box"><div class="stat-num brand-gradient-text">75%+</div><div class="stat-label">AI自动解决率<br>常见咨询无需人工介入</div></div>
+        <div class="stat-box"><div class="stat-num brand-gradient-text">秒级</div><div class="stat-label">平均响应时长<br>7×24 实时应答，0排队</div></div>
+        <div class="stat-box"><div class="stat-num brand-gradient-text">80%+</div><div class="stat-label">人力成本下降<br>同等咨询量所需坐席减半</div></div>
+        <div class="stat-box"><div class="stat-num brand-gradient-text">130+</div><div class="stat-label">支持语言<br>覆盖全球买家无障碍沟通</div></div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 对比 -->
+<div class="section">
+    <div class="section-title">多客 AI Agent与传统AI客服对比</div>
+    <table class="comp-table">
+        <thead><tr><th>维度</th><th style="background: rgba(255,255,255,0.08);">传统AI客服</th><th>多客AI客服</th></tr></thead>
+        <tbody>
+            <tr><td><strong style="color:#fff">底层架构</strong></td><td>关键词或 QA 库，系统割裂</td><td>多Agent协同，连接MCP/Skills</td></tr>
+            <tr><td><strong style="color:#fff">理解能力</strong></td><td>机械匹配，容易答非所问</td><td>深度解析复杂长句与上下文</td></tr>
+            <tr><td><strong style="color:#fff">业务执行</strong></td><td>只能回答，操作仍靠人工</td><td>查物流、改地址、核对库存并执行</td></tr>
+            <tr><td><strong style="color:#fff">响应稳定</strong></td><td>高峰拥堵，体验波动明显</td><td>深夜、大促持续在线，弹性承接</td></tr>
+            <tr><td><strong style="color:#fff">品牌定制</strong></td><td>标准化话术缺少品牌感</td><td>语气、规则和业务边界可调教</td></tr>
+            <tr><td><strong style="color:#fff">知识维护</strong></td><td>依赖人工维护，更新滞后</td><td>真实会话回流，知识持续进化</td></tr>
+        </tbody>
+    </table>
+    <div class="highlight-box" style="text-align: center; font-size: 16px; font-weight: 700; color: #fff;">不止更聪明，更能完成工作</div>
+    <div style="margin-top: 30px;">
+        <div class="section-subtitle" style="text-align: center;">AI客服的四个时代</div>
+        <div class="timeline">
+            <div class="tl-item"><div class="tl-dot" style="background: rgba(255,255,255,0.2);"></div><div><div class="tl-title" style="color: rgba(255,255,255,0.4);">电话按键时代</div><div class="tl-desc">人工应答 · 按键转接</div></div></div>
+            <div class="tl-item"><div class="tl-dot" style="background: rgba(255,255,255,0.2);"></div><div><div class="tl-title" style="color: rgba(255,255,255,0.4);">AI问答时代</div><div class="tl-desc">机器对话 · 答你所问</div></div></div>
+            <div class="tl-item"><div class="tl-dot" style="background: rgba(255,255,255,0.2);"></div><div><div class="tl-title" style="color: rgba(255,255,255,0.4);">智能体任务时代</div><div class="tl-desc">不止回答 · 更能办事</div></div></div>
+            <div class="tl-item current"><div class="tl-dot" style="background: linear-gradient(120deg, #4d7cff, #8b5cf6);"></div><div><div class="tl-title brand-gradient-text">自进化客服时代 <span style="font-size: 11px; opacity: 0.6;">← 多客正在开创</span></div><div class="tl-desc">越用越聪明 · 自我生长</div></div></div>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 多Agent -->
+<div class="section">
+    <div class="section-title">多Agent · 多Skills · 多Tools</div>
+    <div class="section-subtitle">覆盖沟通、运营、分析等能力</div>
+    <div class="grid-3">
+        <div class="glass-card"><div class="card-icon">💬</div><div class="card-title">会话 Agent</div><div class="card-desc">商品咨询、物流咨询、售后咨询<br>统一消息聚合中心</div></div>
+        <div class="glass-card"><div class="card-icon">📈</div><div class="card-title">营销增长 Agent</div><div class="card-desc">智能跟单、自动回评、营销活动</div></div>
+        <div class="glass-card"><div class="card-icon">📊</div><div class="card-title">生意参谋 Agent</div><div class="card-desc">店铺数据分析、核心数据统计、重要事项提醒</div></div>
+    </div>
+    <div class="highlight-box">
+        <div class="highlight-text"><strong style="color: #4d7cff;">能力基石：</strong>多Tools — 连接系统、数据、工具等能力组件<br>实时翻译 · 快捷回复 · 订单管理 · 评价管理 · 工单管理<br><strong style="color: #4d7cff;">多终端：</strong>电脑端 · 手机端 · 网页端 · 多平台消息统一接入</div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 不止回复 -->
+<div class="section">
+    <div class="section-title">不止回复，更会"干活"的AI客服专家</div>
+    <div class="section-text">查订单、追物流、办售后等90%以上业务场景，多客AI Agent 直接处理，无需人工介入。把常见业务问题交给 AI，人工只在真正需要拍板时出现。</div>
+    <div class="grid-3">
+        <div class="glass-card"><div class="card-icon">🛍️</div><div class="card-title">商品咨询</div><div class="card-desc">调用商品知识库，实时获取商品库存、价格、属性等知识，秒级答复买家</div></div>
+        <div class="glass-card"><div class="card-icon">🚚</div><div class="card-title">物流追踪</div><div class="card-desc">通过物流MCP获取最新物流状态，主动同步进度、处理派送异常</div></div>
+        <div class="glass-card"><div class="card-icon">🔧</div><div class="card-title">售后咨询</div><div class="card-desc">智能识别买家售后诉求，调用对应处理 SOP，精准解答并推动问题闭环</div></div>
+    </div>
+    <div class="highlight-box" style="text-align: center;"><span class="brand-gradient-text" style="font-size: 18px; font-weight: 700;">不止能回复 — 多客AI Agent</span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Skill -->
+<div class="section">
+    <div class="section-title">沉淀业务经验，驱动 Agent 持续成长</div>
+    <div class="section-text">丰富、灵活且可持续成长的 Skill 体系，联动海量店铺专属知识库，自答自查，自学习自进化；让 Agent 不仅懂业务，更能持续成长。</div>
+    <div class="grid-3">
+        <div class="glass-card"><div class="card-icon">🏪</div><div class="card-title">① Skill商城</div><div class="card-desc">海量技能即装即用，无需自行搭建，一键启用，高效承接店铺 80% 日常重复工作</div></div>
+        <div class="glass-card"><div class="card-icon">⚡</div><div class="card-title">② 智能提取</div><div class="card-desc">一键蒸馏客服Skill，只需上传产品资料、客服 SOP 和店铺规则等文件，即可自动生成专属Skill</div></div>
+        <div class="glass-card"><div class="card-icon">🧬</div><div class="card-title">③ 自进化Skill</div><div class="card-desc">基于会话及店铺知识自动沉淀优质 Skill，根据优秀人工客服经验迭代优化，系统持续进化</div></div>
+    </div>
+    <div class="highlight-box" style="text-align: center;"><span class="brand-gradient-text" style="font-size: 18px; font-weight: 700;">自进化Skill — 越用越聪明</span></div>
+</div>
+
+<div class="divider"></div>
+
+
+<!-- 支持平台展示 -->
+<div class="section reveal">
+    <div class="section-title">支持平台</div>
+    <div class="section-subtitle">7大主流电商及社交平台，全覆盖你的全球生意</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin: 30px 0;">
+        <div class="platform-badge"><span class="platform-icon">🛒</span><div><div class="platform-name">Shopee</div><div class="platform-desc">东南亚领航电商平台</div></div></div>
+        <div class="platform-badge"><span class="platform-icon">🛍️</span><div><div class="platform-name">Lazada</div><div class="platform-desc">东南亚知名电商平台</div></div></div>
+        <div class="platform-badge"><span class="platform-icon">🎵</span><div><div class="platform-name">TikTok Shop</div><div class="platform-desc">全球热门社交电商</div></div></div>
+        <div class="platform-badge"><span class="platform-icon">🟡</span><div><div class="platform-name">Mercado Libre</div><div class="platform-desc">拉美最大电商平台</div></div></div>
+        <div class="platform-badge"><span class="platform-icon">📦</span><div><div class="platform-name">Daraz</div><div class="platform-desc">南亚领先电商平台</div></div></div>
+        <div class="platform-badge"><span class="platform-icon">💬</span><div><div class="platform-name">Facebook</div><div class="platform-desc">Messenger智能接待</div></div></div>
+        <div class="platform-badge"><span class="platform-icon">📱</span><div><div class="platform-name">WhatsApp Business</div><div class="platform-desc">官方API无缝对接</div></div></div>
+    </div>
+    <div class="highlight-box" style="text-align: center;">
+        <div class="highlight-text"><strong style="color: #4d7cff;">持续扩展中</strong> — 更多平台即将接入，一站式管理你的全球生意</div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 跨平台 -->
+<div class="section">
+    <div class="section-title">跨平台 AI 客服，统一接待全球买家</div>
+    <div class="section-text">聚合多平台、多店铺客户消息，让全球客户服务集中、高效、持续在线。</div>
+    <div class="grid-3">
+        <div class="glass-card"><div class="card-icon">🌐</div><div class="card-title">多平台会话</div><div class="card-desc">连接 Shopee、Lazada、TikTok Shop、Mercado Libre、Daraz、Facebook、WhatsApp Business 等主流电商及社交平台，统一承接并回复所有客户消息</div></div>
+        <div class="glass-card"><div class="card-icon">🗣️</div><div class="card-title">多语言接待</div><div class="card-desc">支持 130+ 语种，提供 7×24 小时精准响应，让不同市场的客户都能获得及时、顺畅的服务</div></div>
+        <div class="glass-card"><div class="card-icon">📱</div><div class="card-title">多终端同步</div><div class="card-desc">电脑端、网页端和手机端数据实时同步，买家消息不错过，即使休假也能及时回复</div></div>
+    </div>
+    <div class="highlight-box" style="text-align: center;"><span class="brand-gradient-text" style="font-size: 18px; font-weight: 700;">服务全球</span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 生意参谋 -->
+<div class="section">
+    <div class="section-title">懂数据更懂你的店铺</div>
+    <div class="section-subtitle">做你的店铺专属顾问</div>
+    <div class="section-text">不止统计店铺数据，更能分析原因，提供解决方案。问一句"这个月退货率为什么变高"，多客直接回复店铺数据，给出原因和优化建议——决策不必等报表。</div>
+    <div class="grid-3">
+        <div class="glass-card"><div class="card-icon">📊</div><div class="card-title">经营洞察</div><div class="card-desc">自动汇总核心经营指标，一问即可掌握店铺整体表现</div></div>
+        <div class="glass-card"><div class="card-icon">⚠️</div><div class="card-title">风险预警</div><div class="card-desc">主动发现差评集中商品、退款异常、客服响应超时等经营风险</div></div>
+        <div class="glass-card"><div class="card-icon">💡</div><div class="card-title">增长建议</div><div class="card-desc">分析经营问题原因，提供针对性优化建议，挖掘潜在增长机会</div></div>
+    </div>
+    <div class="highlight-box" style="text-align: center;"><span class="brand-gradient-text" style="font-size: 18px; font-weight: 700;">生意参谋Agent — 决策不必等报表</span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 营销增长 -->
+<div class="section">
+    <div class="section-title">从接待到订单完成，驱动规模化转化</div>
+    <div class="section-text">买家问完没下单、加购后没付款、物流异常没跟进？多客主动识别并持续跟进，从咨询、成交到物流履约与评价，全流程跟进，持续助你提升店铺收益。</div>
+    <div class="grid-3">
+        <div class="glass-card"><div class="card-icon">💰</div><div class="card-title">促进成交</div><div class="card-desc">智能推荐商品、引导下单付款</div><div style="margin-top: 10px; font-size: 24px; font-weight: 800;" class="brand-gradient-text">转化率+55%</div></div>
+        <div class="glass-card"><div class="card-icon">🔄</div><div class="card-title">挽回流失</div><div class="card-desc">识别风险订单，主动物流跟进弃单挽回</div><div style="margin-top: 10px; font-size: 24px; font-weight: 800;" class="brand-gradient-text">流失-45%</div></div>
+        <div class="glass-card"><div class="card-icon">🔁</div><div class="card-title">激活复购</div><div class="card-desc">自动邀评、引导关注、唤醒老客，持续提升复购</div></div>
+    </div>
+    <div class="highlight-box" style="text-align: center;"><span class="brand-gradient-text" style="font-size: 18px; font-weight: 700;">营销增长Agent</span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 口碑 -->
+<div class="section">
+    <div class="section-title">口碑认可 — 客户用了都说好</div>
+    <div class="testimonial">
+        <div class="testi-text">"我们同时开了好几个店铺，之前客服每天都要在不同后台之间切来切去。用了多客以后，消息都集中在一个页面，整体效率提升很明显。"</div>
+        <div class="testi-author brand-gradient-text">Daniel Tan  东南亚跨境卖家｜18家店铺｜年销售额 $5M+</div>
+        <div class="testi-tag" style="background: rgba(77,124,255,0.12); color: #4d7cff;">一站式管理更方便</div>
+    </div>
+    <div class="testimonial">
+        <div class="testi-text">"多客的操作逻辑比较简单，新人熟悉一下就能开始接待，不需要反复培训。"</div>
+        <div class="testi-author brand-gradient-text">Nicha Srisuk   泰国本土时尚品牌卖家｜4家店铺</div>
+        <div class="testi-tag" style="background: rgba(139,92,246,0.12); color: #8b5cf6;">简单好用，易上手</div>
+    </div>
+    <div class="testimonial">
+        <div class="testi-text">"多客AI能够为不同市场的买家提供专业、一致的服务，帮助我们在提升接待效率的同时，维护统一的品牌体验。"</div>
+        <div class="testi-author brand-gradient-text">Xiaoyu Lin  知名个护品牌市场总监｜10+市场布局</div>
+        <div class="testi-tag" style="background: rgba(236,72,153,0.12); color: #ec4899;">AI精准接待，统一品牌体验</div>
+    </div>
+    <div class="testimonial">
+        <div class="testi-text">"AI 能及时给出准确回答，还能引导买家完成下单，帮店铺多抓住一些成交机会。"</div>
+        <div class="testi-author brand-gradient-text">Rafael  Mercado Libre&Shop｜巴西3C类目卖家｜6家店铺</div>
+        <div class="testi-tag" style="background: rgba(251,122,69,0.12); color: #fb7a45;">AI能促成店铺转化</div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 案例 -->
+<div class="section">
+    <div class="section-title">优秀回复案例</div>
+    <div class="case-card">
+        <div class="case-title">🔄 换货场景</div>
+        <div class="case-value"><span class="brand-gradient-text">多客AI价值点：</span>商品库存实时查询，买家咨询即时回复</div>
+        <div class="case-desc">自动查询商品不同颜色、尺码的实时库存，准确回复买家可换选项，并协助完成换货确认，减少人工查询与反复沟通。</div>
+    </div>
+    <div class="case-card">
+        <div class="case-title">✨ 定制产品</div>
+        <div class="case-value"><span class="brand-gradient-text">多客AI价值点：</span>定制需求自动收集，审批确认后准确履约</div>
+        <div class="case-desc">支持识别图片、姓名、留言等个性化需求，自动整理并提醒客服审核备注，让每一项定制要求都能被准确执行。</div>
+    </div>
+    <div class="case-card">
+        <div class="case-title">🛠️ 售后处理</div>
+        <div class="case-value"><span class="brand-gradient-text">多客AI价值点：</span>售后问题智能识别，退换货全程引导</div>
+        <div class="case-desc">自动识别买家提供的破损图片与问题描述，结合自学习知识和店铺售后规则，给出解决方案并引导完成退换货，减少常见售后问题的人工介入。</div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+
+<!-- 核心优势速览 -->
+<div class="section reveal">
+    <div class="section-title">为什么选择多客？</div>
+    <div class="section-subtitle">5大核心优势，让AI客服真正为你创造价值</div>
+    <div class="grid-3" style="margin-top: 30px;">
+        <div class="advantage-card"><div class="advantage-icon">🧠</div><div class="advantage-title">自进化能力</div><div class="advantage-desc">AI从真实会话中持续学习，越用越聪明，无需人工维护知识库</div></div>
+        <div class="advantage-card"><div class="advantage-icon">⚡</div><div class="advantage-title">秒级响应</div><div class="advantage-desc">7×24小时实时应答，0排队0等待，大促高峰也不堵</div></div>
+        <div class="advantage-card"><div class="advantage-icon">🌐</div><div class="advantage-title">全球覆盖</div><div class="advantage-desc">130+语言支持，7大平台统一管理，一个系统服务全球买家</div></div>
+        <div class="advantage-card"><div class="advantage-icon">🔧</div><div class="advantage-title">能干活</div><div class="advantage-desc">不只是回复，更能查物流、改地址、办退换，90%业务直接处理</div></div>
+        <div class="advantage-card"><div class="advantage-icon">📊</div><div class="advantage-title">懂数据</div><div class="advantage-desc">自动分析店铺经营数据，发现问题、给出建议，决策不必等报表</div></div>
+        <div class="advantage-card"><div class="advantage-icon">🔐</div><div class="advantage-title">安全合规</div><div class="advantage-desc">官方API对接，全链路加密，平台规则合规，用得更安心</div></div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 安全合规 -->
+<div class="section">
+    <div class="section-title">安全合规，让卖家使用更安心</div>
+    <div class="grid-3">
+        <div class="glass-card"><div class="card-icon">🔐</div><div class="card-title">官方API对接</div><div class="card-desc">对接官方API，数据加密传输与存储</div></div>
+        <div class="glass-card"><div class="card-icon">🛡️</div><div class="card-title">全链路加密</div><div class="card-desc">敏感信息脱敏，保障买卖双方数据安全</div></div>
+        <div class="glass-card"><div class="card-icon">👥</div><div class="card-title">精细化权限管理</div><div class="card-desc">按角色、店铺、平台分配权限，操作全程留痕，可追溯</div></div>
+        <div class="glass-card"><div class="card-icon">✅</div><div class="card-title">平台规则合规</div><div class="card-desc">自动拦截不合规话术、平台敏感词，保障店铺防风险</div></div>
+        <div class="glass-card"><div class="card-icon">🚀</div><div class="card-title">最前沿AI模型</div><div class="card-desc">更智能、更稳定，使用起来更可靠</div></div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 生态 -->
+<div class="section">
+    <div class="section-title">店小秘集团产品生态布局</div>
+    <div class="section-subtitle">可快速复制的核心能力，让店小秘拥有全球布局的先发优势</div>
+    <div class="grid-4">
+        <div class="stat-box"><div class="stat-num brand-gradient-text">130W+</div><div class="stat-label">中国出海免费ERP<br>注册用户</div></div>
+        <div class="stat-box"><div class="stat-num brand-gradient-text">110W+</div><div class="stat-label">东南亚本土电商ERP<br>注册用户</div></div>
+        <div class="stat-box"><div class="stat-num brand-gradient-text">20W+</div><div class="stat-label">拉美本土电商ERP<br>注册用户</div></div>
+        <div class="stat-box"><div class="stat-num brand-gradient-text">6W+</div><div class="stat-label">欧美本土电商ERP<br>注册用户</div></div>
+        <div class="stat-box"><div class="stat-num brand-gradient-text">200W+</div><div class="stat-label">全球物流查询平台<br>DAU</div></div>
+        <div class="stat-box"><div class="stat-num brand-gradient-text">15W+</div><div class="stat-label">全球电商AI客服<br>注册用户</div></div>
+        <div class="stat-box"><div class="stat-num brand-gradient-text">50W+</div><div class="stat-label">精细化管理系统<br>亚马逊卖家</div></div>
+        <div class="stat-box"><div class="stat-num brand-gradient-text">1000+</div><div class="stat-label">海外仓管理系统<br>使用仓库数</div></div>
+    </div>
+    <div class="highlight-box" style="text-align: center; margin-top: 24px;"><span style="color: rgba(255,255,255,0.7);">店小秘实现全球化布局和业务产品多元化，具有极强的风险防御能力</span></div>
+</div>
+
+<div class="divider"></div>
+
+
+<!-- FAQ 常见问题 -->
+<div class="section reveal">
+    <div class="section-title">常见问题</div>
+    <div class="section-subtitle">关于多客AI客服，你想知道的都在这里</div>
+    <div style="margin-top: 30px;">
+        <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                <span>多客AI支持哪些电商平台？</span>
+                <span class="faq-arrow">⌄</span>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">目前支持 Shopee、Lazada、TikTok Shop、Mercado Libre、Daraz、Facebook Messenger、WhatsApp Business 共7大主流平台，后续还将持续接入更多平台，满足卖家全球化布局需求。</div></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                <span>AI客服能处理多复杂的客户问题？</span>
+                <span class="faq-arrow">⌄</span>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">多客AI基于多Agent架构，能处理商品咨询、物流追踪、售后退换货、订单修改等90%以上日常业务场景。遇到复杂问题会自动转接人工客服，确保客户体验。</div></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                <span>支持哪些语言？翻译准确吗？</span>
+                <span class="faq-arrow">⌄</span>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">支持130+语种，覆盖全球主要市场。AI基于深度语义理解进行翻译，不是简单的机翻，能理解上下文和电商场景，保证沟通的自然和准确。</div></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                <span>数据安全如何保障？</span>
+                <span class="faq-arrow">⌄</span>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">通过官方API对接，全链路加密传输与存储，敏感信息脱敏处理。按角色、店铺、平台精细化管理权限，操作全程留痕可追溯。自动拦截不合规话术和平台敏感词，保障店铺安全。</div></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+                <span>如何开始使用？有免费试用吗？</span>
+                <span class="faq-arrow">⌄</span>
+            </div>
+            <div class="faq-a"><div class="faq-a-inner">点击页面「免费试用」按钮或扫描右侧二维码即可注册免费试用。注册后会有专业顾问一对一协助你完成平台授权和系统配置，快速上手。</div></div>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 二维码 + 结尾（白底） -->
+<div class="section" style="text-align: center; background: #ffffff; color: #1a1a2e; border-radius: 20px; margin: 20px auto; max-width: 1060px; padding: 60px 20px;">
+    <div style="font-size: 14px; letter-spacing: 4px; font-weight: 600; margin-bottom: 24px;" class="brand-gradient-text">WWW.DUOKE.COM</div>
+    <div style="font-size: 40px; font-weight: 800; margin: 20px 0 12px;"><span class="brand-gradient-text">多客</span></div>
+    <div style="font-size: 18px; color: #666; margin-bottom: 40px;">让 AI 接管客服，把人力还给增长</div>
+    <div class="qr-section" style="margin: 0;">
+        <div class="qr-card" style="background: #f8f9ff; border: 1px solid #e0e6f5;">
+            <img src="qr-wechat.jpg" class="qr-image">
+            <div class="qr-title" style="color: #1a1a2e;">微信咨询</div>
+            <div class="qr-desc" style="color: #888;">添加微信<br>专业顾问一对一服务</div>
+        </div>
+        <div class="qr-card" style="background: #f8f9ff; border: 1px solid #e0e6f5;">
+            <img src="qr-duoke.png" class="qr-image">
+            <div class="qr-title" style="color: #1a1a2e;">免费注册试用</div>
+            <div class="qr-desc" style="color: #888;">扫码即可注册<br>立即免费试用多客AI</div>
+        </div>
+    </div>
+</div>
+
+<div class="footer" style="background: #ffffff; color: #999; padding: 30px 20px; border-radius: 20px; margin: 0 auto 40px; max-width: 1060px;">
+    <p>DUOKE - 店小秘集团旗下品牌</p>
+    <p style="margin-top: 8px;">© 2026 DUOKE. All rights reserved.</p>
+</div>
+
+
+<!-- 悬浮免费试用按钮（移动端） -->
+<div class="float-cta">
+    <a href="https://ai.duoke.com/#/dk/regist?code=XHQDK" target="_blank" style="display: flex; align-items: center; gap: 6px; background: linear-gradient(120deg, #4d7cff 0%, #8b5cf6 50%, #ec4899 100%); color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; padding: 12px 24px; border-radius: 25px; box-shadow: 0 6px 20px rgba(77,124,255,0.4);">免费试用 →</a>
+</div>
+
+<!-- 滚动渐入动画 -->
+<script>
+(function() {
+    var reveals = document.querySelectorAll('.reveal');
+    function checkReveal() {
+        for (var i = 0; i < reveals.length; i++) {
+            var el = reveals[i];
+            var rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 60) {
+                el.classList.add('visible');
+            }
+        }
+    }
+    window.addEventListener('scroll', checkReveal);
+    window.addEventListener('load', checkReveal);
+    checkReveal();
+})();
+</script>
+
+</body>
+</html>
