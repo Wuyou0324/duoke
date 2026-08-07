@@ -164,6 +164,14 @@ html { scroll-behavior: smooth; }
 .hero-cta { display: inline-block; background: linear-gradient(120deg, #4d7cff 0%, #8b5cf6 50%, #ec4899 100%); color: #fff !important; text-decoration: none; font-size: 16px; font-weight: 700; padding: 14px 36px; border-radius: 30px; box-shadow: 0 8px 24px rgba(77,124,255,0.35); transition: transform 0.2s, box-shadow 0.2s; }
 .hero-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(77,124,255,0.45); }
 
+
+/* Scroll Down Hint (mobile only) */
+.scroll-hint { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: none; flex-direction: column; align-items: center; gap: 4px; z-index: 2; opacity: 0.6; transition: opacity 0.4s ease; animation: bounceDown 2s infinite; }
+.scroll-hint .hint-text { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 3px; }
+.scroll-hint .hint-arrow { font-size: 22px; color: rgba(255,255,255,0.35); line-height: 1; }
+@keyframes bounceDown { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
+@media (max-width: 768px) { .scroll-hint { display: flex; } .scroll-hint.hidden { opacity: 0; pointer-events: none; } }
+
 </style>
 </head>
 <body>
@@ -188,6 +196,10 @@ html { scroll-behavior: smooth; }
     </div>
     <div style="margin-top: 32px; position: relative; z-index: 1;">
         <a href="https://ai.duoke.com/#/dk/regist?code=XHQDK" target="_blank" class="hero-cta">免费试用</a>
+    </div>
+    <div class="scroll-hint" id="scrollHint">
+        <div class="hint-text">向下滑动</div>
+        <div class="hint-arrow">&#8964;</div>
     </div>
 </div>
 
@@ -225,10 +237,10 @@ html { scroll-behavior: smooth; }
     <div style="margin-top: 30px;">
         <div class="section-subtitle" style="text-align: center;">AI客服的四个时代</div>
         <div class="timeline">
-            <div class="tl-item"><div class="tl-dot" style="background: rgba(255,255,255,0.2);"></div><div><div class="tl-title" style="color: rgba(255,255,255,0.4);">电话按键时代</div><div class="tl-desc">人工应答 · 按键转接</div></div></div>
-            <div class="tl-item"><div class="tl-dot" style="background: rgba(255,255,255,0.2);"></div><div><div class="tl-title" style="color: rgba(255,255,255,0.4);">AI问答时代</div><div class="tl-desc">机器对话 · 答你所问</div></div></div>
-            <div class="tl-item"><div class="tl-dot" style="background: rgba(255,255,255,0.2);"></div><div><div class="tl-title" style="color: rgba(255,255,255,0.4);">智能体任务时代</div><div class="tl-desc">不止回答 · 更能办事</div></div></div>
-            <div class="tl-item current"><div class="tl-dot" style="background: linear-gradient(120deg, #4d7cff, #8b5cf6);"></div><div><div class="tl-title brand-gradient-text">自进化客服时代 <span style="font-size: 11px; opacity: 0.6;">← 多客正在开创</span></div><div class="tl-desc">越用越聪明 · 自我生长</div></div></div>
+            <div class="tl-item"><div class="tl-dot" style="background: rgba(255,255,255,0.2);"></div><div><div class="tl-title" style="color: rgba(255,255,255,0.4);">电话按键时代</div><div class="tl-desc">人工应答 · 按键转接<br><span style="opacity:0.4;font-size:11px;">电话热线 · IVR按键导航 · 人工坐席</span></div></div></div>
+            <div class="tl-item"><div class="tl-dot" style="background: rgba(255,255,255,0.2);"></div><div><div class="tl-title" style="color: rgba(255,255,255,0.4);">AI问答时代</div><div class="tl-desc">机器对话 · 答你所问<br><span style="opacity:0.4;font-size:11px;">NLP语义匹配 · FAQ机器人 · 大模型LLM</span></div></div></div>
+            <div class="tl-item"><div class="tl-dot" style="background: rgba(255,255,255,0.2);"></div><div><div class="tl-title" style="color: rgba(255,255,255,0.4);">智能体任务时代</div><div class="tl-desc">不止回答 · 更能办事<br><span style="opacity:0.4;font-size:11px;">AI Agent · 工作流编排Flow · Skill动态调用</span></div></div></div>
+            <div class="tl-item current"><div class="tl-dot" style="background: linear-gradient(120deg, #4d7cff, #8b5cf6);"></div><div><div class="tl-title brand-gradient-text">自进化客服时代 <span style="font-size: 11px; opacity: 0.6;">← 多客正在开创</span></div><div class="tl-desc">越用越聪明 · 自我生长<br><span style="opacity:0.6;font-size:11px;">会话提炼Skill · 无监督持续学习 · 链路自主决策</span></div></div></div>
         </div>
     </div>
 </div>
@@ -307,7 +319,7 @@ html { scroll-behavior: smooth; }
     <div class="grid-3">
         <div class="glass-card"><div class="card-icon">🌐</div><div class="card-title">多平台会话</div><div class="card-desc">连接 Shopee、Lazada、TikTok Shop、Mercado Libre、Daraz、Facebook、WhatsApp Business 等主流电商及社交平台，统一承接并回复所有客户消息</div></div>
         <div class="glass-card"><div class="card-icon">🗣️</div><div class="card-title">多语言接待</div><div class="card-desc">支持 130+ 语种，提供 7×24 小时精准响应，让不同市场的客户都能获得及时、顺畅的服务</div></div>
-        <div class="glass-card"><div class="card-icon">📱</div><div class="card-title">多终端同步</div><div class="card-desc">电脑端、网页端和手机端数据实时同步，买家消息不错过，即使休假也能及时回复</div></div>
+        <div class="glass-card"><div class="card-icon">📱</div><div class="card-title">多终端同步</div><div class="card-desc">电脑端、网页端和手机端数据实时同步，买家消息不错过，即使休假、下班路上也能及时回复买家消息，查看店铺订单情况</div></div>
     </div>
     <div class="highlight-box" style="text-align: center;"><span class="brand-gradient-text" style="font-size: 18px; font-weight: 700;">服务全球</span></div>
 </div>
@@ -347,22 +359,22 @@ html { scroll-behavior: smooth; }
 <div class="section">
     <div class="section-title">口碑认可 — 客户用了都说好</div>
     <div class="testimonial">
-        <div class="testi-text">"我们同时开了好几个店铺，之前客服每天都要在不同后台之间切来切去。用了多客以后，消息都集中在一个页面，整体效率提升很明显。"</div>
+        <div class="testi-text">"我们同时开了好几个店铺，之前客服每天都要在不同后台之间切来切去，经常怕漏掉买家消息。用了多客以后，消息都集中在一个页面，谁在处理、哪些没回复，一眼就能看到，整体效率提升很明显。"</div>
         <div class="testi-author brand-gradient-text">Daniel Tan  东南亚跨境卖家｜18家店铺｜年销售额 $5M+</div>
         <div class="testi-tag" style="background: rgba(77,124,255,0.12); color: #4d7cff;">一站式管理更方便</div>
     </div>
     <div class="testimonial">
-        <div class="testi-text">"多客的操作逻辑比较简单，新人熟悉一下就能开始接待，不需要反复培训。"</div>
+        <div class="testi-text">"我们团队客服流动比较快，所以最怕那种功能很多但不好用的系统。多客的操作逻辑比较简单，新人熟悉一下就能开始接待，不需要反复培训，也不会增加额外负担。"</div>
         <div class="testi-author brand-gradient-text">Nicha Srisuk   泰国本土时尚品牌卖家｜4家店铺</div>
         <div class="testi-tag" style="background: rgba(139,92,246,0.12); color: #8b5cf6;">简单好用，易上手</div>
     </div>
     <div class="testimonial">
-        <div class="testi-text">"多客AI能够为不同市场的买家提供专业、一致的服务，帮助我们在提升接待效率的同时，维护统一的品牌体验。"</div>
+        <div class="testi-text">"个护消费者非常关注成分、功效和适用人群，任何不准确的回复都会影响购买决策。多客AI能够为不同市场的买家提供专业、一致的服务，帮助我们在提升接待效率的同时，维护统一的品牌体验。"</div>
         <div class="testi-author brand-gradient-text">Xiaoyu Lin  知名个护品牌市场总监｜10+市场布局</div>
         <div class="testi-tag" style="background: rgba(236,72,153,0.12); color: #ec4899;">AI精准接待，统一品牌体验</div>
     </div>
     <div class="testimonial">
-        <div class="testi-text">"AI 能及时给出准确回答，还能引导买家完成下单，帮店铺多抓住一些成交机会。"</div>
+        <div class="testi-text">"一开始我们只是想用多客提高回复效率，后来发现AI对转化也有帮助。买家咨询商品、优惠、发货时间时，AI能及时给出准确回答，还能引导买家完成下单，不只是减少人工工作量，也能帮店铺多抓住一些成交机会。"</div>
         <div class="testi-author brand-gradient-text">Rafael  Mercado Libre&Shop｜巴西3C类目卖家｜6家店铺</div>
         <div class="testi-tag" style="background: rgba(251,122,69,0.12); color: #fb7a45;">AI能促成店铺转化</div>
     </div>
@@ -436,6 +448,8 @@ html { scroll-behavior: smooth; }
         <div class="stat-box"><div class="stat-num brand-gradient-text">15W+</div><div class="stat-label">全球电商AI客服<br>注册用户</div></div>
         <div class="stat-box"><div class="stat-num brand-gradient-text">50W+</div><div class="stat-label">精细化管理系统<br>亚马逊卖家</div></div>
         <div class="stat-box"><div class="stat-num brand-gradient-text">1000+</div><div class="stat-label">海外仓管理系统<br>使用仓库数</div></div>
+        <div class="stat-box"><div class="stat-num brand-gradient-text">12W+</div><div class="stat-label">一站式合规服务平台<br>注册用户</div></div>
+        <div class="stat-box"><div class="stat-num brand-gradient-text">5W+</div><div class="stat-label">跨境共享仓储<br>日处理订单</div></div>
     </div>
     <div class="highlight-box" style="text-align: center; margin-top: 24px;"><span style="color: rgba(255,255,255,0.7);">店小秘实现全球化布局和业务产品多元化，具有极强的风险防御能力</span></div>
 </div>
@@ -534,6 +548,22 @@ html { scroll-behavior: smooth; }
     window.addEventListener('scroll', checkReveal);
     window.addEventListener('load', checkReveal);
     checkReveal();
+})();
+
+/* Scroll Hint - fade out on scroll */
+(function() {
+    var hint = document.getElementById('scrollHint');
+    if (!hint) return;
+    var hidden = false;
+    window.addEventListener('scroll', function() {
+        if (!hidden && window.scrollY > 80) {
+            hint.classList.add('hidden');
+            hidden = true;
+        } else if (hidden && window.scrollY <= 80) {
+            hint.classList.remove('hidden');
+            hidden = false;
+        }
+    });
 })();
 </script>
 
