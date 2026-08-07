@@ -21,9 +21,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC'
 .section-text { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 20px; }
 
 /* Hero */
-.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 20px; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(77,124,255,0.15) 0%, transparent 70%); top: -200px; right: -200px; }
-.hero::after { content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 70%); bottom: -150px; left: -150px; }
+.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 20px; position: relative; overflow: hidden; background-image: linear-gradient(90deg, rgba(8,8,15,0.92) 0%, rgba(8,8,15,0.65) 45%, rgba(8,8,15,0.25) 100%), url('hero-bg.png'); background-size: cover; background-position: center top; background-repeat: no-repeat; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 70% 60%, rgba(77,124,255,0.12) 0%, transparent 50%); pointer-events: none; }
+.hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 80%, rgba(236,72,153,0.08) 0%, transparent 45%); pointer-events: none; }
 .hero-logo { font-size: 14px; letter-spacing: 4px; font-weight: 600; margin-bottom: 30px; position: relative; z-index: 1; }
 .hero-title { font-size: 48px; font-weight: 800; margin-bottom: 20px; position: relative; z-index: 1; line-height: 1.2; }
 .hero-desc { font-size: 20px; color: rgba(255,255,255,0.6); margin-bottom: 40px; position: relative; z-index: 1; }
@@ -91,6 +91,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC'
 
 /* Responsive */
 @media (max-width: 768px) {
+    .hero { background-image: linear-gradient(180deg, rgba(8,8,15,0.96) 0%, rgba(8,8,15,0.82) 45%, rgba(8,8,15,0.45) 100%), url('hero-bg.png'); background-position: 55% top; }
     .hero-title { font-size: 32px; }
     .hero-desc { font-size: 16px; }
     .section { padding: 50px 16px; }
@@ -171,6 +172,34 @@ html { scroll-behavior: smooth; }
 .scroll-hint .hint-arrow { font-size: 22px; color: rgba(255,255,255,0.35); line-height: 1; }
 @keyframes bounceDown { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
 @media (max-width: 768px) { .scroll-hint { display: flex; } .scroll-hint.hidden { opacity: 0; pointer-events: none; } }
+
+
+/* Ecosystem cards */
+.eco-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin: 30px 0; }
+.eco-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 22px 16px; text-align: center; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; min-height: 220px; }
+.eco-card:hover { transform: translateY(-6px); border-color: rgba(124,108,255,0.25); box-shadow: 0 12px 40px rgba(77,124,255,0.12); }
+.eco-logo { height: 38px; width: auto; max-width: 100%; margin-bottom: 12px; object-fit: contain; }
+.eco-name { font-size: 16px; font-weight: 700; margin-bottom: 3px; }
+.eco-region { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
+.eco-desc { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 14px; line-height: 1.5; flex-grow: 1; }
+.eco-stat { font-size: 22px; font-weight: 800; background: linear-gradient(120deg, #4d7cff, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.eco-stat span { display: block; font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 4px; -webkit-text-fill-color: rgba(255,255,255,0.45); }
+
+/* Case screenshots */
+.case-image { width: 100%; max-width: 620px; margin: 22px auto 0; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1); display: block; box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
+
+/* Responsive eco */
+@media (max-width: 1024px) { .eco-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) {
+    .eco-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .eco-card { padding: 18px 12px; min-height: 190px; }
+    .eco-logo { height: 30px; }
+    .eco-name { font-size: 14px; }
+    .eco-desc { font-size: 11px; margin-bottom: 10px; }
+    .eco-stat { font-size: 18px; }
+    .case-image { border-radius: 10px; }
+}
+@media (max-width: 480px) { .eco-grid { grid-template-columns: repeat(2, 1fr); } }
 
 </style>
 </head>
@@ -389,16 +418,19 @@ html { scroll-behavior: smooth; }
         <div class="case-title">🔄 换货场景</div>
         <div class="case-value"><span class="brand-gradient-text">多客AI价值点：</span>商品库存实时查询，买家咨询即时回复</div>
         <div class="case-desc">自动查询商品不同颜色、尺码的实时库存，准确回复买家可换选项，并协助完成换货确认，减少人工查询与反复沟通。</div>
+        <img src="case-exchange.png" class="case-image" alt="换货场景：AI实时查询库存并回复买家">
     </div>
     <div class="case-card">
         <div class="case-title">✨ 定制产品</div>
         <div class="case-value"><span class="brand-gradient-text">多客AI价值点：</span>定制需求自动收集，审批确认后准确履约</div>
         <div class="case-desc">支持识别图片、姓名、留言等个性化需求，自动整理并提醒客服审核备注，让每一项定制要求都能被准确执行。</div>
+        <img src="case-custom.png" class="case-image" alt="定制产品：AI识别图片需求并引导确认">
     </div>
     <div class="case-card">
         <div class="case-title">🛠️ 售后处理</div>
         <div class="case-value"><span class="brand-gradient-text">多客AI价值点：</span>售后问题智能识别，退换货全程引导</div>
         <div class="case-desc">自动识别买家提供的破损图片与问题描述，结合自学习知识和店铺售后规则，给出解决方案并引导完成退换货，减少常见售后问题的人工介入。</div>
+        <img src="case-aftersales.png" class="case-image" alt="售后处理：AI识别破损图片并引导退换货">
     </div>
 </div>
 
@@ -439,17 +471,77 @@ html { scroll-behavior: smooth; }
 <div class="section">
     <div class="section-title">店小秘集团产品生态布局</div>
     <div class="section-subtitle">可快速复制的核心能力，让店小秘拥有全球布局的先发优势</div>
-    <div class="grid-4">
-        <div class="stat-box"><div class="stat-num brand-gradient-text">130W+</div><div class="stat-label">中国出海免费ERP<br>注册用户</div></div>
-        <div class="stat-box"><div class="stat-num brand-gradient-text">110W+</div><div class="stat-label">东南亚本土电商ERP<br>注册用户</div></div>
-        <div class="stat-box"><div class="stat-num brand-gradient-text">20W+</div><div class="stat-label">拉美本土电商ERP<br>注册用户</div></div>
-        <div class="stat-box"><div class="stat-num brand-gradient-text">6W+</div><div class="stat-label">欧美本土电商ERP<br>注册用户</div></div>
-        <div class="stat-box"><div class="stat-num brand-gradient-text">200W+</div><div class="stat-label">全球物流查询平台<br>DAU</div></div>
-        <div class="stat-box"><div class="stat-num brand-gradient-text">15W+</div><div class="stat-label">全球电商AI客服<br>注册用户</div></div>
-        <div class="stat-box"><div class="stat-num brand-gradient-text">50W+</div><div class="stat-label">精细化管理系统<br>亚马逊卖家</div></div>
-        <div class="stat-box"><div class="stat-num brand-gradient-text">1000+</div><div class="stat-label">海外仓管理系统<br>使用仓库数</div></div>
-        <div class="stat-box"><div class="stat-num brand-gradient-text">12W+</div><div class="stat-label">一站式合规服务平台<br>注册用户</div></div>
-        <div class="stat-box"><div class="stat-num brand-gradient-text">5W+</div><div class="stat-label">跨境共享仓储<br>日处理订单</div></div>
+    <div class="eco-grid">
+        <div class="eco-card reveal">
+            <img src="logo-dianxiaomi.png" class="eco-logo" alt="店小秘">
+            <div class="eco-name">店小秘</div>
+            <div class="eco-region">中国出海</div>
+            <div class="eco-desc">免费跨境电商ERP</div>
+            <div class="eco-stat">130W+<span>注册用户</span></div>
+        </div>
+        <div class="eco-card reveal">
+            <img src="logo-bigseller.png" class="eco-logo" alt="BigSeller">
+            <div class="eco-name">BigSeller</div>
+            <div class="eco-region">东南亚</div>
+            <div class="eco-desc">东南亚本土电商ERP</div>
+            <div class="eco-stat">110W+<span>注册用户</span></div>
+        </div>
+        <div class="eco-card reveal">
+            <img src="logo-upseller.png" class="eco-logo" alt="UpSeller">
+            <div class="eco-name">UpSeller</div>
+            <div class="eco-region">拉美地区</div>
+            <div class="eco-desc">拉美本土电商ERP</div>
+            <div class="eco-stat">20W+<span>注册用户</span></div>
+        </div>
+        <div class="eco-card reveal">
+            <img src="logo-4seller.png" class="eco-logo" alt="4Seller">
+            <div class="eco-name">4Seller</div>
+            <div class="eco-region">欧美地区</div>
+            <div class="eco-desc">欧美本土电商ERP</div>
+            <div class="eco-stat">6W+<span>注册用户</span></div>
+        </div>
+        <div class="eco-card reveal">
+            <img src="logo-17track.png" class="eco-logo" alt="17TRACK">
+            <div class="eco-name">17TRACK</div>
+            <div class="eco-region">服务全球</div>
+            <div class="eco-desc">全球物流查询平台</div>
+            <div class="eco-stat">200W+<span>DAU</span></div>
+        </div>
+        <div class="eco-card reveal" style="border-color: rgba(124,108,255,0.25); background: linear-gradient(135deg, rgba(77,124,255,0.06) 0%, rgba(139,92,246,0.06) 100%);">
+            <img src="logo-duoke.png" class="eco-logo" alt="多客">
+            <div class="eco-name">多客</div>
+            <div class="eco-region">全球电商</div>
+            <div class="eco-desc">AI客服系统</div>
+            <div class="eco-stat">15W+<span>注册用户</span></div>
+        </div>
+        <div class="eco-card reveal">
+            <img src="logo-saihu.png" class="eco-logo" alt="赛狐ERP">
+            <div class="eco-name">赛狐ERP</div>
+            <div class="eco-region">跨境电商</div>
+            <div class="eco-desc">精细化管理系统</div>
+            <div class="eco-stat">50W+<span>亚马逊卖家</span></div>
+        </div>
+        <div class="eco-card reveal">
+            <img src="logo-xiaomiyuncang.png" class="eco-logo" alt="小秘云仓">
+            <div class="eco-name">小秘云仓</div>
+            <div class="eco-region">海外仓储</div>
+            <div class="eco-desc">海外仓管理系统</div>
+            <div class="eco-stat">1000+<span>使用仓库数</span></div>
+        </div>
+        <div class="eco-card reveal">
+            <img src="logo-kuaxintong.png" class="eco-logo" alt="跨信通">
+            <div class="eco-name">跨信通</div>
+            <div class="eco-region">合规服务</div>
+            <div class="eco-desc">一站式合规服务平台</div>
+            <div class="eco-stat">12W+<span>注册用户</span></div>
+        </div>
+        <div class="eco-card reveal">
+            <img src="logo-jifengwms.png" class="eco-logo" alt="极风WMS">
+            <div class="eco-name">极风WMS</div>
+            <div class="eco-region">共享仓储</div>
+            <div class="eco-desc">跨境共享仓储</div>
+            <div class="eco-stat">5W+<span>日处理订单</span></div>
+        </div>
     </div>
     <div class="highlight-box" style="text-align: center; margin-top: 24px;"><span style="color: rgba(255,255,255,0.7);">店小秘实现全球化布局和业务产品多元化，具有极强的风险防御能力</span></div>
 </div>
