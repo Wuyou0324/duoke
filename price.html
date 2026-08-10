@@ -21,9 +21,16 @@
         .pricing-card.recommended { border-color: rgba(77, 124, 255, 0.5); background: rgba(77, 124, 255, 0.05); }
         .rec-badge { position: absolute; top: 15px; right: 15px; background: linear-gradient(135deg, #4d7cff, #8b5cf6); color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; }
         .plan-name { font-size: 28px; font-weight: 700; margin-bottom: 15px; }
-        .plan-features { font-size: 15px; color: #a0a0b0; margin-bottom: 20px; line-height: 1.8; }
-        .plan-price { font-size: 42px; font-weight: 700; background: linear-gradient(135deg, #4d7cff 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 5px; }
-        .plan-period { font-size: 16px; color: #808090; }
+        .plan-features { font-size: 16px; color: #a0a0b0; margin-bottom: 20px; line-height: 1.9; }
+        .plan-features .feat-extra { color: #4d7cff; font-weight: 500; }
+        .plan-price-row { display: flex; align-items: baseline; gap: 4px; margin-bottom: 5px; }
+        .plan-price { font-size: 42px; font-weight: 700; background: linear-gradient(135deg, #4d7cff 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .plan-period { font-size: 20px; color: #808090; font-weight: 500; }
+        .followup-section { margin-top: 20px; margin-bottom: 30px; background: rgba(77, 124, 255, 0.06); border: 1px solid rgba(77, 124, 255, 0.2); border-radius: 16px; padding: 28px 30px; }
+        .followup-title { font-size: 18px; font-weight: 600; color: #e0e0e0; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .followup-title .icon { font-size: 20px; }
+        .followup-tags { display: flex; flex-wrap: wrap; gap: 10px 14px; }
+        .followup-tag { font-size: 15px; color: #c8c8d0; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.08); padding: 7px 16px; border-radius: 20px; white-space: nowrap; }
         .ai-packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .ai-package { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 25px; text-align: center; position: relative; }
         .discount-badge { position: absolute; top: 10px; right: 10px; background: linear-gradient(135deg, #fb7a45, #ec4899); color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; }
@@ -48,6 +55,10 @@
             .plan-name { font-size: 22px !important; }
             .plan-features { font-size: 14px !important; }
             .plan-price { font-size: 32px !important; }
+            .plan-period { font-size: 16px !important; }
+            .followup-section { padding: 20px 18px !important; margin-top: 15px !important; margin-bottom: 25px !important; }
+            .followup-title { font-size: 15px !important; margin-bottom: 12px !important; }
+            .followup-tag { font-size: 13px !important; padding: 5px 12px !important; }
             .ai-credits { font-size: 18px !important; }
             .ai-price { font-size: 26px !important; }
             .contact-info { font-size: 15px !important; }
@@ -114,27 +125,41 @@
                 <div class="pricing-grid">
                     <div class="pricing-card">
                         <div class="plan-name">VIP 1</div>
-                        <div class="plan-features">3 个子账号 · 20 家店铺 · 智能跟32,000买家/月</div>
-                        <div class="plan-price">¥1,068</div>
-                        <div class="plan-period">/年</div>
+                        <div class="plan-features">3 个子账号 · 20 家店铺<br>智能跟单 32,000 买家/月<br><span class="feat-extra">大模型智能翻译 不限</span></div>
+                        <div class="plan-price-row"><span class="plan-price">¥1,068</span><span class="plan-period">/年</span></div>
                     </div>
                     <div class="pricing-card recommended"><span class="rec-badge">推荐</span>
                         <div class="plan-name">VIP 2</div>
-                        <div class="plan-features">7 个子账号 · 50 家店铺 · 智能跟82,000买家/月</div>
-                        <div class="plan-price">¥3,600</div>
-                        <div class="plan-period">/年</div>
+                        <div class="plan-features">7 个子账号 · 50 家店铺<br>智能跟单 82,000 买家/月<br><span class="feat-extra">大模型智能翻译 不限</span></div>
+                        <div class="plan-price-row"><span class="plan-price">¥3,600</span><span class="plan-period">/年</span></div>
                     </div>
                     <div class="pricing-card">
                         <div class="plan-name">VIP 3</div>
-                        <div class="plan-features">15 个子账号 · 100 家店铺 · 智能跟120,000买家/月</div>
-                        <div class="plan-price">¥6,000</div>
-                        <div class="plan-period">/年</div>
+                        <div class="plan-features">15 个子账号 · 100 家店铺<br>智能跟单 120,000 买家/月<br><span class="feat-extra">大模型智能翻译 不限</span></div>
+                        <div class="plan-price-row"><span class="plan-price">¥6,000</span><span class="plan-period">/年</span></div>
                     </div>
                     <div class="pricing-card">
                         <div class="plan-name">VIP 4</div>
-                        <div class="plan-features">30 个子账号 · 200 家店铺 · 智能跟不限买家</div>
-                        <div class="plan-price">¥9,688</div>
-                        <div class="plan-period">/年</div>
+                        <div class="plan-features">30 个子账号 · 200 家店铺<br>智能跟单 不限买家<br><span class="feat-extra">大模型智能翻译 不限</span></div>
+                        <div class="plan-price-row"><span class="plan-price">¥9,688</span><span class="plan-period">/年</span></div>
+                    </div>
+                </div>
+                <div class="followup-section">
+                    <div class="followup-title"><span class="icon">🤖</span>智能跟单包含以下功能：</div>
+                    <div class="followup-tags">
+                        <span class="followup-tag">进店接待</span>
+                        <span class="followup-tag">自动邀请关注</span>
+                        <span class="followup-tag">关注有礼</span>
+                        <span class="followup-tag">催下单</span>
+                        <span class="followup-tag">催付款</span>
+                        <span class="followup-tag">催好评</span>
+                        <span class="followup-tag">确认订单</span>
+                        <span class="followup-tag">发货提醒</span>
+                        <span class="followup-tag">派送提醒</span>
+                        <span class="followup-tag">派送失败提醒</span>
+                        <span class="followup-tag">确认收货提醒</span>
+                        <span class="followup-tag">弃单挽回</span>
+                        <span class="followup-tag">评价关怀</span>
                     </div>
                 </div>
             </div>
