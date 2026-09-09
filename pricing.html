@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="z3eVKyAXcrLtfaHhkwbHfS">
+<head data-page-node-id="osJIbTA0pIn5QeldhuUjYa">
+<meta charset="UTF-8" data-page-node-id="XnCJ7YfuhpNzj8njBBcbPs">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="QpOQdCMw7zFpP3UYx4qH9h">
+<title>多客 AI 客服软件 · 价格方案</title>
+<style>
+  :root{
+    --cream:#fbf6ea;
+    --cream2:#fdfaf2;
+    --ink:#2b2620;
+    --muted:#8a8172;
+    --gold:#c9a24b;
+    --gold-soft:#f0e3c2;
+    --orange:#f08c1e;
+    --dark:#1e1a14;
+    --dark2:#2d271e;
+    --line:#efe6d2;
+    --green:#3fae6a;
+    --blue:#2f7bf6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+    background:#efe9dd;
+    color:var(--ink);
+    padding:28px 16px;
+    display:flex;justify-content:center;
+  }
+  .poster{
+    width:1000px;max-width:100%;
+    background:linear-gradient(165deg,#fdf9ef 0%,#faf3e2 50%,#f6ecd7 100%);
+    border-radius:24px;
+    padding:44px 40px 36px;
+    box-shadow:0 18px 50px rgba(90,70,30,.18);
+    position:relative;overflow:hidden;
+  }
+  .poster::before{
+    content:"";position:absolute;top:-160px;right:-160px;
+    width:340px;height:340px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,162,75,.16),transparent 70%);
+  }
+
+  /* ---------- header ---------- */
+  .hd{text-align:center;position:relative;}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--gold-soft);color:#8a6a1f;
+    font-size:13px;font-weight:600;padding:6px 18px;border-radius:999px;
+  }
+  .badge::before{content:"✦";font-size:11px;}
+  h1{
+    margin:16px 0 8px;font-size:42px;font-weight:800;letter-spacing:1px;
+    background:linear-gradient(90deg,#e0a63c,#8bc34a);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  h1 .ai-chip{
+    display:inline-block;vertical-align:middle;background:var(--blue);color:#fff;
+    font-size:24px;font-weight:700;padding:6px 16px;border-radius:12px;margin:0 8px;
+    -webkit-text-fill-color:#fff;
+  }
+  .subtitle{color:var(--muted);font-size:14.5px;margin-bottom:8px;}
+
+  /* 往下滑提示 */
+  .scroll-hint{
+    text-align:center;font-size:13px;color:#a08c5e;margin-bottom:22px;
+  }
+  .scroll-hint .arrow{
+    display:inline-block;margin-left:4px;
+    animation:bob 1.2s ease-in-out infinite;
+  }
+  @keyframes bob{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(4px);}
+  }
+
+  /* ---------- VIP grid 2x2 ---------- */
+  .vips{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .card{
+    background:var(--cream2);border:1px solid var(--line);border-radius:20px;
+    padding:22px 22px 18px;position:relative;box-shadow:0 5px 18px rgba(160,130,60,.09);
+    display:flex;flex-direction:column;
+  }
+  .card.hot{
+    background:linear-gradient(180deg,var(--dark) 0%,var(--dark2) 36%,var(--cream2) 36%);
+    border-color:#3a332a;box-shadow:0 10px 28px rgba(40,32,18,.25);
+  }
+  .rec{
+    position:absolute;top:-11px;right:18px;background:var(--orange);color:#fff;
+    font-size:12px;font-weight:700;padding:4px 13px;border-radius:999px;
+    box-shadow:0 4px 10px rgba(240,140,30,.4);
+  }
+  .tag{
+    display:inline-block;align-self:flex-start;font-size:12px;font-weight:600;
+    padding:5px 14px;border-radius:999px;margin-bottom:14px;
+    background:#f3e9d2;color:#8a6a1f;
+  }
+  .card.hot .tag{background:var(--gold);color:#fff;}
+  .pname{font-size:19px;font-weight:800;}
+  .psub{font-size:12px;color:var(--muted);margin-top:2px;}
+  .card.hot .pname,.card.hot .psub{color:#fff;}
+  .card.hot .psub{color:#c3b79c;}
+  .price{display:flex;align-items:baseline;gap:6px;margin-top:10px;}
+  .price .cur{font-size:20px;font-weight:700;}
+  .price .num{font-size:48px;font-weight:800;line-height:1;letter-spacing:-1px;}
+  .price .per{font-size:13px;color:var(--muted);}
+  .card.hot .price .cur,.card.hot .price .num{color:#fff;}
+  .card.hot .price .per{color:#c3b79c;}
+  .perday{
+    display:inline-block;align-self:flex-start;margin-top:10px;
+    font-size:12px;font-weight:600;background:#fdf0dc;color:#b06a10;
+    padding:5px 12px;border-radius:8px;
+  }
+  .card.hot .perday{background:rgba(240,140,30,.18);color:#f5a94e;}
+
+  /* quota blocks — 大字版，店铺数一眼看清 */
+  .quota{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px;}
+  .q{background:#fdf7e8;border:1px solid var(--line);border-radius:12px;padding:12px 6px;text-align:center;}
+  .q .n{font-size:23px;font-weight:800;line-height:1.1;}
+  .q .n small{font-size:12px;font-weight:600;margin-left:1px;}
+  .q .l{font-size:11.5px;color:var(--muted);margin-top:3px;}
+  .q.ai .n{color:var(--orange);}
+  .q.ai .l{color:#b08850;}
+  .card.hot .q{background:#fdf7e8;}
+
+  .sec{
+    display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;
+    color:var(--gold);letter-spacing:2px;margin:16px 0 6px;
+  }
+  .sec::after{content:"";flex:1;height:1px;background:var(--line);}
+  .feats{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;}
+  .f{font-size:12.5px;color:#5c554a;padding:3px 0;}
+  .f::before{content:"✔";color:var(--green);font-size:11px;margin-right:5px;}
+  .upg{
+    margin-top:14px;font-size:12.5px;color:#8a6a1f;background:#f7ecd2;
+    border-radius:10px;padding:9px 12px;
+  }
+  .upg b{color:#b06a10;}
+
+  /* ---------- 价值 ---------- */
+  .value{
+    margin-top:26px;background:linear-gradient(180deg,#1b1712,#262017);
+    color:#f2ead8;border-radius:20px;padding:24px 26px;
+    box-shadow:0 10px 28px rgba(40,32,18,.26);
+  }
+  .value h3{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .value h3::before{content:"";width:4px;height:16px;background:var(--gold);border-radius:2px;}
+  .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 26px;margin-top:16px;}
+  .vitem{display:flex;gap:10px;font-size:13px;line-height:1.5;}
+  .vitem .n{
+    flex:none;width:21px;height:21px;border-radius:50%;background:var(--gold);color:#fff;
+    font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;
+  }
+  .vitem b{color:#ffd98a;}
+  .vnote{
+    margin-top:18px;background:rgba(201,162,75,.13);border:1px solid rgba(201,162,75,.3);
+    border-radius:12px;padding:12px 16px;font-size:13px;color:#e8dcbd;
+  }
+  .vnote b{color:#ffd98a;}
+
+  /* ---------- AI 积分包 ---------- */
+  .credits{margin-top:26px;}
+  .ch{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .ch h2{font-size:19px;font-weight:800;white-space:nowrap;}
+  .ch .cap{font-size:12.5px;color:var(--muted);}
+  .ch .line{flex:1;height:1px;background:var(--line);}
+  .packs{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+  .pack{
+    background:var(--cream2);border:1px solid var(--line);border-radius:14px;
+    padding:15px 8px;text-align:center;position:relative;
+    box-shadow:0 4px 14px rgba(160,130,60,.07);
+  }
+  .pack .size{font-size:13.5px;font-weight:800;white-space:nowrap;}
+  .pack .p2{font-size:21px;font-weight:800;color:var(--orange);margin:7px 0 2px;}
+  .pack .sess{font-size:11px;color:var(--muted);}
+  .pack .disc{
+    position:absolute;top:-9px;right:8px;background:var(--green);color:#fff;
+    font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:999px;
+  }
+  .tip{
+    margin-top:14px;font-size:13px;color:#8a6a1f;background:#f7ecd2;
+    border-radius:12px;padding:11px 18px;text-align:center;
+  }
+  .tip b{color:#b06a10;}
+
+  /* ---------- footer CTA ---------- */
+  .cta{
+    margin-top:26px;display:flex;align-items:center;justify-content:space-between;
+    gap:20px;background:linear-gradient(90deg,#f3e7c9,#fbeed3);
+    border:1px solid var(--gold-soft);border-radius:18px;padding:18px 26px;
+  }
+  .cta .txt{font-size:15px;font-weight:700;color:#7a5c14;}
+  .cta .txt span{display:block;font-size:12.5px;font-weight:400;color:#9c8352;margin-top:4px;}
+  .cta .btn{
+    background:var(--dark);color:#f6e9cd;font-size:15px;font-weight:700;
+    padding:13px 26px;border-radius:12px;white-space:nowrap;
+    text-decoration:none;display:inline-block;
+    box-shadow:0 6px 16px rgba(30,26,20,.28);
+    transition:transform .12s ease,background .12s ease;
+  }
+  .cta .btn:hover{background:#3a3226;transform:translateY(-1px);}
+  .cta .btn::after{content:" →";font-weight:800;}
+  .reg-link{
+    margin-top:12px;text-align:center;font-size:13px;color:#8a6a1f;
+  }
+  .reg-link a{
+    color:#7a5c14;font-weight:700;text-decoration:underline;
+    text-underline-offset:3px;word-break:break-all;
+  }
+
+  /* ---------- 侧边悬浮注册按钮 ---------- */
+  .fab{
+    position:fixed;right:14px;bottom:26px;z-index:99;
+    background:linear-gradient(135deg,#f5a832,#f08c1e);color:#fff;
+    text-decoration:none;font-weight:700;font-size:15px;
+    padding:13px 18px;border-radius:999px;
+    box-shadow:0 8px 22px rgba(240,140,30,.5);
+    display:flex;flex-direction:column;align-items:center;line-height:1.3;
+    transition:transform .12s ease;
+  }
+  .fab:active{transform:scale(.96);}
+  .fab small{font-size:10.5px;font-weight:500;opacity:.92;}
+
+  /* ---------- 手机端适配 ---------- */
+  @media (max-width:760px){
+    body{padding:12px 8px 90px;}
+    .poster{padding:28px 16px 24px;border-radius:16px;}
+    .badge{font-size:12px;padding:5px 14px;}
+    h1{font-size:29px;margin:14px 0 6px;}
+    h1 .ai-chip{font-size:17px;padding:4px 11px;border-radius:9px;}
+    .subtitle{font-size:13px;}
+    .scroll-hint{font-size:12px;margin-bottom:16px;}
+    .vips{grid-template-columns:1fr;gap:16px;}
+    .card{padding:20px 16px 16px;}
+    .price .num{font-size:42px;}
+    .vgrid{grid-template-columns:1fr;gap:11px;}
+    .value{padding:20px 18px;}
+    .credits{margin-top:22px;}
+    .ch{flex-wrap:wrap;gap:6px;}
+    .ch .line{display:none;}
+    .packs{grid-template-columns:repeat(2,1fr);gap:12px;}
+    .pack .p2{font-size:19px;}
+    .tip{font-size:12px;padding:10px 14px;text-align:left;}
+    .cta{flex-direction:column;text-align:center;padding:18px 16px;gap:14px;}
+    .cta .btn{padding:13px 30px;font-size:15px;}
+    .reg-link{font-size:11.5px;padding:0 6px;}
+    .fab{right:12px;bottom:20px;font-size:14px;padding:12px 16px;}
+  }
+  @media print{
+    body{background:#fff;padding:0;}
+    .fab{display:none;}
+    .scroll-hint{display:none;}
+    .poster{box-shadow:none;border-radius:0;width:100%;}
+  }
+</style>
+</head>
+<body data-page-node-id="aqCBF52u2U2Gav5HWHXWta">
+
+  <div class="poster" data-page-node-id="mu1ndvjqsC8GoboAYswmTw">
+
+    <!-- header -->
+    <div class="hd" data-page-node-id="uX28EI5oOHzwlvVkNegoSa">
+      <span class="badge" data-page-node-id="lirEqPc0UeZeCCWj4nkDeB">AI 客服 · 价格方案</span>
+      <h1 data-page-node-id="mPTh1A0C2lxXw4w1MNs6WI">多客 <span class="ai-chip" data-page-node-id="1V7sB8yd9lEtFqN2O8xQOF">AI</span> 客服软件</h1>
+      <p class="subtitle" data-page-node-id="KUZeTV9JumH4Coly9IXTTz">7×24 秒级接待，130+ 语言自动翻译，AI 越用越懂你的店</p>
+    </div>
+
+    <!-- 往下滑提示 -->
+    <div class="scroll-hint" data-page-node-id="aW8O33d17FR5rOr4d3qakn">往下滑，查看完整价格方案<span class="arrow" data-page-node-id="xIjXNYOtmYCrj2ArdHUWTN">↓</span></div>
+
+    <!-- VIP 2x2 -->
+    <div class="vips" data-page-node-id="XUP8P7dg1I1hEsReyVYiZ8">
+
+      <!-- VIP 1 -->
+      <div class="card hot" data-page-node-id="uwRbQ5M8a8REI1KMAOLaZq">
+        <span class="rec" data-page-node-id="jE7v7efGzWzn0tg3OYdhXL">推荐</span>
+        <span class="tag" data-page-node-id="WuJcQI3GFwzqS4MMbYNcq3">智能方案 · 含 AI</span>
+        <div class="pname" data-page-node-id="44tkbBm7ZxP4JCBDzcCJkW">VIP 1 <span style="font-size:12px;font-weight:400;color:#c3b79c;" data-page-node-id="Gp5BjS4XvShtiMXSuWjIbL">/ 年</span></div>
+        <div class="psub" data-page-node-id="3CiYNKhzZmhPgTcsF9zkLo">起步首选 · 小团队标配</div>
+        <div class="price" data-page-node-id="QT9YB7qChxfsq4v28HR3MG"><span class="cur" data-page-node-id="DMXne8napEIdyZLQIV4IeZ">¥</span><span class="num" data-page-node-id="RIeufbhJFZqbq4UndhVFPx">1756</span><span class="per" data-page-node-id="YebVEkeBZGFhPFD2pclGuD">/ 年</span></div>
+        <span class="perday" data-page-node-id="DbRUkq9gC8HqhTuxMaDRNG">折合 ¥4.8 / 天</span>
+
+        <div class="quota" data-page-node-id="L9snDL1IdHAr2llSIVzITE">
+          <div class="q" data-page-node-id="DiwFmXxfJWGPkxbVSDuv2G"><div class="n" data-page-node-id="b2dek2c9OU2Gv4C0ZSAbbW">20</div><div class="l" data-page-node-id="VUfGkGlalCuUcNqUBobzMG">家店铺</div></div>
+          <div class="q" data-page-node-id="IKdtLlJ2IRA0dmhr8Amiu5"><div class="n" data-page-node-id="ybYmnJlr309tJFqffFlMGM">3</div><div class="l" data-page-node-id="sOAffay3zmFrRHoqc0MeWN">个子账号</div></div>
+          <div class="q" data-page-node-id="nV3JpUapblmnVEOHuMV1eo"><div class="n" data-page-node-id="dgscXjlejRCXwPP9MPzXn3">3.2<small data-page-node-id="ogq7d0Gfqo1vhXDzcJnrIo">万</small></div><div class="l" data-page-node-id="WWc5CSQUnx80XsHn3gyFNc">买家 / 月</div></div>
+        </div>
+
+        <div class="sec" data-page-node-id="JzF9QP1Ou7AQwR698KPsGJ">功能权益</div>
+        <div class="feats" data-page-node-id="epaDIwTIG5NCjn9RDNqjTj">
+          <div class="f" data-page-node-id="U8BTjDl5Kf8MHQlk8zgnPi">聚合聊天</div>
+          <div class="f" data-page-node-id="QTjbajMf2UU41Cpky1SC8H">智能翻译</div>
+          <div class="f" data-page-node-id="KSgC4ECPnpgZNsVevvlJWI">知识库</div>
+          <div class="f" data-page-node-id="XTLLSm1xOqG1LdSmO4buj5">智能任务分配</div>
+          <div class="f" data-page-node-id="v28hBKfCiITKKfFmlWFCls">工单</div>
+          <div class="f" data-page-node-id="xBCmL8DiJKqplRcAtk4yK7">客服绩效</div>
+          <div class="f" data-page-node-id="KJBGbnQlPDNKoiuwMbeW2j">1V1 运营指导</div>
+          <div class="f" data-page-node-id="cgffrqgOoHCQY9fUxlWHem">自动回复</div>
+        </div>
+
+        <div class="quota" style="margin-top:14px;" data-page-node-id="zGxUL89hIjEIK8z08PHJCj">
+          <div class="q ai" style="grid-column:span 3;" data-page-node-id="8Q7EuP9teJw590q1Ljz6SC">
+            <div class="n" data-page-node-id="9qEsWa3wHDmPlvx81O67VG">50,000</div><div class="l" data-page-node-id="WMTmiBKU5UBDoACSB4mI9g">含 AI 积分（约 2,000 次对话）</div>
+          </div>
+        </div>
+
+        <div class="upg" data-page-node-id="vIsxzbBYrAY1tsXtlkD0fM">不要 AI？标准方案 <b data-page-node-id="fnvo8RnYfCQf4Rb0rDxdFN">¥1,068 / 年</b>（20 家店铺 · 3 子账号 · 3.2 万买家/月）</div>
+      </div>
+
+      <!-- VIP 2 -->
+      <div class="card" data-page-node-id="PcvFTvL6SdGi6SM28S0hJQ">
+        <span class="tag" data-page-node-id="xyixMJf4eJK4tr9cwOy8s8">标准方案</span>
+        <div class="pname" data-page-node-id="vp5TnBEPdyX3mcyfP2F5h6">VIP 2 <span style="font-size:12px;font-weight:400;color:var(--muted);" data-page-node-id="zKiq3BuhhwXYl6b4nWdbfU">/ 年（不含 AI）</span></div>
+        <div class="psub" data-page-node-id="A4LKBCW3kAKokeBq1uB8h2">成长型卖家 · 多店扩张</div>
+        <div class="price" data-page-node-id="zIoDuOHOlSXTPRB78DpAYm"><span class="cur" data-page-node-id="fycb4gaSSHA4Wa3KbD3erP">¥</span><span class="num" data-page-node-id="SE9vQJojj1YEPOZaQhyNgR">3600</span><span class="per" data-page-node-id="w9sCAYoG6puehRYI6iHPkG">/ 年</span></div>
+        <span class="perday" data-page-node-id="Uq3Pw4YJfstOe7DCSvGZCY">折合 ¥9.9 / 天</span>
+        <div class="quota" data-page-node-id="alGCTk3jDpd736th8l7SMM">
+          <div class="q" data-page-node-id="abaFXDg6wQNCZRTOhmps7I"><div class="n" data-page-node-id="jjbJbW2t1aqUBr2I0yRIjX">50</div><div class="l" data-page-node-id="aIuVJJsi4K9vnFnrm0ZEkV">家店铺</div></div>
+          <div class="q" data-page-node-id="FYYzlbJB1xSTKK4XWPAoGy"><div class="n" data-page-node-id="yBRxqjCVBJA4XHjJuC32IK">7</div><div class="l" data-page-node-id="lIiHV55RRBvIEoTvih6xyB">个子账号</div></div>
+          <div class="q" data-page-node-id="bEcun5aDpiFvPr9FeEoyJ2"><div class="n" data-page-node-id="oAE8iWZ9yzuqKRl5ntgGmH">8.2<small data-page-node-id="wU0Bnp6NlUOvXZosC6mgQB">万</small></div><div class="l" data-page-node-id="70EvgCD2QGdanQgpCM4RkI">买家 / 月</div></div>
+        </div>
+        <div class="sec" data-page-node-id="HQwbhOQ7kIrSqCQgMCMASW">功能权益</div>
+        <div class="feats" data-page-node-id="xNzbuuN1rA5OyCv1w8ENJ3">
+          <div class="f" data-page-node-id="RzXlRpK6FTmMojjhY16vAB">聚合聊天</div><div class="f" data-page-node-id="B6G2iHg8XBlUxRJXcSBb1H">智能翻译</div>
+          <div class="f" data-page-node-id="KnFITtFSONHcXgGYporYcG">知识库</div><div class="f" data-page-node-id="Twruz3HUus8EZseLB1Ogv4">智能任务分配</div>
+          <div class="f" data-page-node-id="wnV38NfuMyvNScUBsCyVM6">工单</div><div class="f" data-page-node-id="E0mDVPi0EvLSaAPryYpPK3">客服绩效</div>
+          <div class="f" data-page-node-id="ayVp9UkgpesMWKplCYgy0y">1V1 运营指导</div><div class="f" data-page-node-id="yw4PjLk1o9sf1xSrakRft4">自动回复</div>
+        </div>
+        <div class="upg" data-page-node-id="ZbynBd9Jfg8CIYM30AoScB">升级智能方案：+5 万 AI 积分 = <b data-page-node-id="502Q3PEU7NZCxKN3jtOaUx">¥4,288 / 年</b></div>
+      </div>
+
+      <!-- VIP 3 -->
+      <div class="card" data-page-node-id="GU53mWDKPiMZvUQUkM8CHU">
+        <span class="tag" data-page-node-id="6uDxp0h44mYUOmf7MM7U85">标准方案</span>
+        <div class="pname" data-page-node-id="KSB2H7jGmHV2WlrbzCSfWJ">VIP 3 <span style="font-size:12px;font-weight:400;color:var(--muted);" data-page-node-id="2FefkaT4FGEj4Gq7pxd6IV">/ 年（不含 AI）</span></div>
+        <div class="psub" data-page-node-id="FElmZdOQGsfXHqI23z8T7O">成熟团队 · 矩阵运营</div>
+        <div class="price" data-page-node-id="wk1tWNV329hSePFbyBweqq"><span class="cur" data-page-node-id="Cw1fGTGMY9QQByy6djvCib">¥</span><span class="num" data-page-node-id="0fpr0yLuLVQQpW1DFXrpQw">6000</span><span class="per" data-page-node-id="92xf6CHXx02uofjQql8K1P">/ 年</span></div>
+        <span class="perday" data-page-node-id="HiADtFULOasgauiBB2NXfL">折合 ¥16.4 / 天</span>
+        <div class="quota" data-page-node-id="END2ILZ0Fn3qdm7bTY0ggx">
+          <div class="q" data-page-node-id="iWL4wN2DXvBprkGPQ7vPmd"><div class="n" data-page-node-id="v9MdKR66NkLkBszQS9Otgl">100</div><div class="l" data-page-node-id="7eEMNXd3SGOyPYM1EDagoQ">家店铺</div></div>
+          <div class="q" data-page-node-id="0S0F18MqLyDmMtGRG3vnaK"><div class="n" data-page-node-id="mGauH6xC4cOoyKY0qv36ve">15</div><div class="l" data-page-node-id="2gZ8MkSAADZ6kmiGvUsVXL">个子账号</div></div>
+          <div class="q" data-page-node-id="7llkVyXA8jQh0l5VahXo2O"><div class="n" data-page-node-id="Cq6VT1Q3rE1t1U3MGCHRFK">12<small data-page-node-id="Jj65pWToOOA5H8XLRVWJ6N">万</small></div><div class="l" data-page-node-id="tFidE2w0zRgWBkkjQc0FRp">买家 / 月</div></div>
+        </div>
+        <div class="sec" data-page-node-id="FUT8nDcDcXQ7MfqsT0SuD3">功能权益</div>
+        <div class="feats" data-page-node-id="FJKHWbeqBaGiIm9hCul7M9">
+          <div class="f" data-page-node-id="E6ytF6GCYJNB6QCJYVeiva">聚合聊天</div><div class="f" data-page-node-id="lWcRJj0E0HooGztneuOcKB">智能翻译</div>
+          <div class="f" data-page-node-id="YyTduEFD6FGHanXCgEYUtv">知识库</div><div class="f" data-page-node-id="7I02LBlr0CSvGjHGSUqdP8">智能任务分配</div>
+          <div class="f" data-page-node-id="7nKAUnIAzpHZ4wXtSqM1x5">工单</div><div class="f" data-page-node-id="cqD6sr4yh2tmkOslDuGcIe">客服绩效</div>
+          <div class="f" data-page-node-id="Wbaaz8aEL063JNTWfVYQGb">1V1 运营指导</div><div class="f" data-page-node-id="pBQnELGroCVh6GY7gac7Yo">自动回复</div>
+        </div>
+        <div class="upg" data-page-node-id="OyOpcQpFSvEVx5iFbw81n7">升级智能方案：+5 万 AI 积分 = <b data-page-node-id="4XEK0j9x4CROYnAlXMwShw">¥6,688 / 年</b></div>
+      </div>
+
+      <!-- VIP 4 -->
+      <div class="card" data-page-node-id="9789TJ9KwVjrRWEEA6lcIs">
+        <span class="tag" data-page-node-id="Ano7C11eBVpyOTCa6mTODL">标准方案</span>
+        <div class="pname" data-page-node-id="CXJMsJvw0ceVEDioYNRLNV">VIP 4 <span style="font-size:12px;font-weight:400;color:var(--muted);" data-page-node-id="5ZcOrD3W13kL4nfQTn56DZ">/ 年（不含 AI）</span></div>
+        <div class="psub" data-page-node-id="NdM5zxEmQ5dSrc2osai6CF">大卖旗舰 · 配额拉满</div>
+        <div class="price" data-page-node-id="X69FZ0HcCEDyovGqDax6Ib"><span class="cur" data-page-node-id="r41IKUsr8litJ9KN54ITye">¥</span><span class="num" data-page-node-id="xAdn0tvVIyLQHBr1LN2Rlr">9688</span><span class="per" data-page-node-id="HGsAhBwAUbWaAZaait87wA">/ 年</span></div>
+        <span class="perday" data-page-node-id="XiaJJnfcvYYF4mCJTQL03m">折合 ¥26.5 / 天</span>
+        <div class="quota" data-page-node-id="7YarR8fRewZrn3hITJ9spS">
+          <div class="q" data-page-node-id="V4zuWFJnWcQ8SBhnevT4xd"><div class="n" data-page-node-id="JuDmUgzRbmRgrK5OYRDihh">200</div><div class="l" data-page-node-id="dTbzep5ArXiQQwis1GSbhm">家店铺</div></div>
+          <div class="q" data-page-node-id="fvonVJrnjKwoFzfzUCW0DV"><div class="n" data-page-node-id="YYFSlG2VAXZGrynxaUEYHJ">30</div><div class="l" data-page-node-id="Afik4JHCu14rzqtap3SwC2">个子账号</div></div>
+          <div class="q" data-page-node-id="mjBClRzTXp5gFM1tWh6BmE"><div class="n" data-page-node-id="lhuQ3f6hr0Lj3QrGh1ArHz">不限</div><div class="l" data-page-node-id="zTCe44AeDzncdMUx3Altdn">买家 / 月</div></div>
+        </div>
+        <div class="sec" data-page-node-id="crxhJU4hjIApkeQULAxRU2">功能权益</div>
+        <div class="feats" data-page-node-id="K6BeL6aai47T3oPefKcMJ2">
+          <div class="f" data-page-node-id="ti1eLT5vQRBr4CBvf2cIUW">聚合聊天</div><div class="f" data-page-node-id="8Mf546Ynx6Ovog1f64eLjP">智能翻译</div>
+          <div class="f" data-page-node-id="fImoHECq2TSMumdKmQmaQt">知识库</div><div class="f" data-page-node-id="aERoJQQIGpA0tqhRN1mFU7">智能任务分配</div>
+          <div class="f" data-page-node-id="K4ytKaMAAXFzU8EXHlXHv8">工单</div><div class="f" data-page-node-id="RIa8ubWHacgym3CKxbg9wP">客服绩效</div>
+          <div class="f" data-page-node-id="Z7mfu2Ewm9eq96UH0FV22P">1V1 运营指导</div><div class="f" data-page-node-id="uBHFiVdK1NLj0imER36trW">自动回复</div>
+        </div>
+        <div class="upg" data-page-node-id="Xw5I453ZFX4KOU4XEvKkRN">升级智能方案：+5 万 AI 积分 = <b data-page-node-id="C2bYCpdxbdWmlW9r9mNkMz">¥10,376 / 年</b></div>
+      </div>
+    </div>
+
+    <!-- 价值 -->
+    <div class="value" data-page-node-id="zhH3inhL3AAmwsE5ZZESPW">
+      <h3 data-page-node-id="O3bp6wRMkmtsvLFJSppto9">价值 <span style="font-size:11px;font-weight:400;color:#9a8f79;" data-page-node-id="MU1HKMoAMKcn9strL8zNeg">每一条都是可量化的钱</span></h3>
+      <div class="vgrid" data-page-node-id="Zw9hfFabVFjtb455j01PIb">
+        <div class="vitem" data-page-node-id="ywK9lAyYlJv0GJLZYTDJvO"><span class="n" data-page-node-id="7mk840gdRFyMcZdtcFrEF2">1</span><div data-page-node-id="66D2FbStLz01AE60J4qyNa"><b data-page-node-id="rGlTfHvCgm0Yp2YLoeuet0">7×24 接待</b>，秒级响应，客户来了就不会等。</div></div>
+        <div class="vitem" data-page-node-id="PM7fdfaKOYzSzAZ8xuFWPa"><span class="n" data-page-node-id="s1a3HZPBId6daNGatfFZZb">2</span><div data-page-node-id="xGRcnVNSv0KqngCTgb1UnT"><b data-page-node-id="kmfB76Fsxw4FeayQzKNkPM">130+ 语言全自动翻译</b>，跨境沟通零障碍。</div></div>
+        <div class="vitem" data-page-node-id="HanuBmOStY1dFU4bd0t0RN"><span class="n" data-page-node-id="D4n2zkaEVLZ08nFt5MYwXu">3</span><div data-page-node-id="OenKqFMfIoHfSMw9ZzrTWv">省 <b data-page-node-id="t9Lrwz7i7ukaLCWNen3SXA">68% 客服人力</b>。</div></div>
+        <div class="vitem" data-page-node-id="QYUjrAXIOdWdtNtLvIvFCr"><span class="n" data-page-node-id="4ECIcqR1aJgEI8JAPI1Hsd">4</span><div data-page-node-id="kZFq8bAmm92t2n3BSsJWIi">转化提升 <b data-page-node-id="ppXa2U1JWZ6PK5DJbAeCYH">30%</b>。</div></div>
+        <div class="vitem" data-page-node-id="59ExMWKhw6Now4TBqr9HQd"><span class="n" data-page-node-id="GtyGClLT5QZLSPxPEbVf52">5</span><div data-page-node-id="pIyzgBHe749FhckYcs4Y8d">应答准确率 <b data-page-node-id="djTbAcpzDmWoO5BK9UyteU">96%</b> —— 每一条都是可量化的钱。</div></div>
+        <div class="vitem" data-page-node-id="oXLUKTWLGYCHFKW3KVUalU"><span class="n" data-page-node-id="JxUH4PAQm3gR74UOS4cwxu">6</span><div data-page-node-id="AzlAhctBEimLy4LVxhz5Ke"><b data-page-node-id="JxJ2ncB0urctec0QiXxD0r">自进化 Skill + Skill 商店 + 营销增长 Agent</b>，AI 越用越懂这家店。</div></div>
+      </div>
+      <div class="vnote" data-page-node-id="trmC4tqNKawuoMwHBwGq3k"><b data-page-node-id="8df1zzfR89TPVIEtxQUbme">积分制透明拆到天：</b>1 天不及一杯奶茶的钱，换来 7×24 客服值守。</div>
+    </div>
+
+    <!-- AI 积分包 -->
+    <div class="credits" data-page-node-id="XkvRucB2UgeAj6tLzbpky7">
+      <div class="ch" data-page-node-id="u5WqcTspHd6pvxEpzvD1UP">
+        <h2 data-page-node-id="kLTpp7u85PQ1rIdrivbFN4">AI 积分包</h2>
+        <span class="cap" data-page-node-id="9vDDNssR9TBLvyzoM58uE2">有效期 365 天 · 可叠加任意版本</span>
+        <span class="line" data-page-node-id="MRbNWm8DLxWH2X1D6nX7w4"></span>
+        <span class="cap" data-page-node-id="YhGlVX6r7Tbzzp8choXlky">用多少买多少，买越多折扣越大</span>
+      </div>
+      <div class="packs" data-page-node-id="0H0qAOSAi2WmwiIWHypaHF">
+        <div class="pack" data-page-node-id="KYUPygz9BK9bS0jp7vq7FN"><div class="size" data-page-node-id="K2DKzQ26KggHasWQ8MaKgg">5 万</div><div class="p2" data-page-node-id="GjtomayMDUvjmttyAhQQAp">¥688</div><div class="sess" data-page-node-id="c9KwFE1tPytiyurTEdV7E9">约 2,000 次对话</div></div>
+        <div class="pack" data-page-node-id="eWl1E2fVho5jcOn5Ydt4E2"><div class="size" data-page-node-id="1uYJdJhGZ5G9PYQZOSqyLc">50 万</div><div class="p2" data-page-node-id="CL2AHZZcaKoMGHiimbjm2g">¥5,888</div><div class="sess" data-page-node-id="svFMoMIIDDwBcbPD208XUl">约 20,000 次对话</div></div>
+        <div class="pack" data-page-node-id="YGG4rjFEAKfGDrzlUkVF7p"><span class="disc" data-page-node-id="GxjrmsCrtBEnyrhpXjDa1M">97折</span><div class="size" data-page-node-id="UkJ2RIkUjxFOCoY01cRSN6">100 万</div><div class="p2" data-page-node-id="hHmaU9KVDyRqxOyo3u5Tk2">¥11,388</div><div class="sess" data-page-node-id="m9B2428KHcKMDAGC4p9AvD">约 42,000 次对话</div></div>
+        <div class="pack" data-page-node-id="0RVeJRHgNI10yBCYC2umo5"><span class="disc" data-page-node-id="Tj94vaul3LD8ZUkymIpWey">93折</span><div class="size" data-page-node-id="XMPLMAdYyzwR7kaOTgUn5y">200 万</div><div class="p2" data-page-node-id="ihVEeJkHCcVGTqXuwzZ4ur">¥21,888</div><div class="sess" data-page-node-id="mlLD1rTLKJBkI2pqG6RQ7X">约 80,000 次对话</div></div>
+        <div class="pack" data-page-node-id="WlLPnkrzhbMau6LMgaI6eK"><span class="disc" data-page-node-id="5LEet5CGxvPtKBHvGWV1zT">88折</span><div class="size" data-page-node-id="RsAoP12cd4QpUdqQzskOvw">500 万</div><div class="p2" data-page-node-id="QmUfoOBGvcpYoqEkLtfOFn">¥51,888</div><div class="sess" data-page-node-id="z8tpAdxuIi8pfYDAPQYsHX">约 210,000 次对话</div></div>
+        <div class="pack" data-page-node-id="ux84eIy9598Q3YudCjDyAD"><span class="disc" data-page-node-id="Ug77Lqv2pStCxFu1ccaNfN">84折</span><div class="size" data-page-node-id="HwE5Df8H6YakvA9kN1zpUj">1000 万</div><div class="p2" data-page-node-id="X8UBVHChOA3ySJFSwzF2Wj">¥98,888</div><div class="sess" data-page-node-id="qeRbRj2SLXLchV3PhVLnh7">约 420,000 次对话</div></div>
+      </div>
+      <div class="tip" data-page-node-id="MvB7IlFcEh5I8FMB5zHfG5">💡 <b data-page-node-id="vbG1LkIKOMfsDwIrMKtoIe">「智能方案」= 任意 VIP 版本 + 5 万 AI 积分包。</b>VIP 1 智能方案 ¥1,756 = VIP 1（¥1,068）+ 5 万积分（¥688），其他版本同理。</div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta" data-page-node-id="7dVQs99zHA15K9nB4htEcT">
+      <div class="txt" data-page-node-id="UrXZYvMoZJN3CDenjC0lJT">注册即领 7 天免费体验
+        <span data-page-node-id="bXUUVpHWAIsGXooDzzme6C">Shopee · Lazada · TikTok · 美客多 全平台支持</span>
+      </div>
+      <a class="btn" href="https://ai.duoke.com/#/dk/regist?code=XHQDK" target="_blank" rel="noopener" data-page-node-id="CIpeqSyHGlg9BXpEZZADiB">立即注册 · 领 7 天体验</a>
+    </div>
+
+    <div class="reg-link" data-page-node-id="9JAn3OMYvU91PHUW4R8cIx">
+      注册链接：<a href="https://ai.duoke.com/#/dk/regist?code=XHQDK" target="_blank" rel="noopener" data-page-node-id="8GIAy2X2kn6j2gPlLXiEVL">https://ai.duoke.com/#/dk/regist?code=XHQDK</a>
+    </div>
+
+  </div>
+
+  <!-- 侧边悬浮注册按钮 -->
+  <a class="fab" href="https://ai.duoke.com/#/dk/regist?code=XHQDK" target="_blank" rel="noopener" data-page-node-id="4OH99ImC1rHMWCBU33b3ai">
+    注册体验
+    <small data-page-node-id="cAoylMk4n0aV0YNTAtgAFa">7 天免费</small>
+  </a>
+
+</body>
+</html>
